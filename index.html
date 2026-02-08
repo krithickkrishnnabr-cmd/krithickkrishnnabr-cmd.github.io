@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You 💖</title>
   <style>
     body {
@@ -10,27 +11,44 @@
       color: #2c2c2c;
       text-align: center;
       padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box {
+      max-width: 800px;
+      background: rgba(255,255,255,0.9);
+      padding: 24px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    h2 {
+      margin-bottom: 12px;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 16px;
     }
     button {
-      padding: 12px 20px;
+      padding: 12px 22px;
       border: none;
       border-radius: 25px;
       background: #ff4d6d;
       color: white;
       font-size: 16px;
-      margin: 10px;
+      margin: 10px 6px;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(255,77,109,0.6);
+      box-shadow: 0 0 12px rgba(255,77,109,0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     button:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 0 18px rgba(255,77,109,0.8);
     }
-    .box {
-      max-width: 700px;
-      margin: auto;
-      background: rgba(255,255,255,0.8);
-      padding: 20px;
-      border-radius: 20px;
+    .muted {
+      opacity: 0.9;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -38,15 +56,16 @@
 
   <div class="box" id="step1">
     <h2>Oru chinna message unakku 💌</h2>
+    <p class="muted">Click Next… unakkaana surprise irukku 😉</p>
     <button id="nextBtn">Next 💖</button>
   </div>
 
   <div class="box" id="step2" style="display:none;">
     <p>
-      From the first time you came into my life, everything started feeling brighter and more meaningful butuu. 
-      Your smile, your care, makes my world complete in ways I never imagined. 
-      With you, even ordinary days feel special thangooo, and I can’t picture my future without you by my side. 
-      I don’t just want to love you today, I want to choose you every single day for the rest of my life. 
+      From the first time you came into my life, everything started feeling brighter and more meaningful butuu.
+      Your smile, your care, makes my world complete in ways I never imagined.
+      With you, even ordinary days feel special thangooo, and I can’t picture my future without you by my side.
+      I don’t just want to love you today, I want to choose you every single day for the rest of my life.
       So from the bottom of my heart, with all my love and hope for our beautiful life to begin buttu 💖
     </p>
 
@@ -57,39 +76,43 @@
 
   <div class="box" id="step3" style="display:none;">
     <p>
-      Ippo naan un love ah full heart oda accept panren, buttu. <br>
-      En life la nee vandha naal lendhu ellame bright ah feel aaguthu. <br>
-      Un feelings enakku romba precious, thangoo, adha naan romba care pannuven. <br>
-      Nee irundha podhum, small moments kooda special ah maariduthu. <br>
-      Un kooda irukkumbodhu naan romba safe ah feel panren, chelooo. <br>
-      En heart la nee irukka place romba special, ammu. <br>
-      Daily unna ninaikkum bodhu, automatic ah smile varudhu. <br>
-      Un voice kettaale podhum, mind full calm aagiduthu, muu. <br>
-      Namma rendu perum serndhu future build panna naan ready, buttu. <br>
-      Un kooda grow aaganum, learn aaganum, dream panna naan aasai padren. <br>
-      En happiness la nee periya part, thangoo, adha naan marakka maatten. <br>
-      Life la enna problem vandhaalum, un kai pidichu face pannuven. <br>
-      Nee en life oda sweetest blessing, chelooo. <br>
-      Un smile dhaan enakku daily motivation, ammu. <br>
-      Un heart ah protect panna naan always try pannuven, muu. <br>
+      Ippo naan un love ah full heart oda accept panren, buttu.<br/>
+      En life la nee vandha naal lendhu ellame bright ah feel aaguthu.<br/>
+      Un feelings enakku romba precious, thangoo, adha naan romba care pannuven.<br/>
+      Nee irundha podhum, small moments kooda special ah maariduthu.<br/>
+      Un kooda irukkumbodhu naan romba safe ah feel panren, chelooo.<br/>
+      En heart la nee irukka place romba special, ammu.<br/>
+      Daily unna ninaikkum bodhu, automatic ah smile varudhu.<br/>
+      Un voice kettaale podhum, mind full calm aagiduthu, muu.<br/>
+      Namma rendu perum serndhu future build panna naan ready, buttu.<br/>
+      Un kooda grow aaganum, learn aaganum, dream panna naan aasai padren.<br/>
+      En happiness la nee periya part, thangoo, adha naan marakka maatten.<br/>
+      Life la enna problem vandhaalum, un kai pidichu face pannuven.<br/>
+      Nee en life oda sweetest blessing, chelooo.<br/>
+      Un smile dhaan enakku daily motivation, ammu.<br/>
+      Un heart ah protect panna naan always try pannuven, muu.<br/>
       Indha moment lendhu, en heart full ah unakku mattum dhaan, forever buttu. 💖
     </p>
   </div>
 
   <script>
-    document.getElementById("nextBtn").onclick = function () {
+    const nextBtn = document.getElementById("nextBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    nextBtn.addEventListener("click", function () {
       document.getElementById("step1").style.display = "none";
       document.getElementById("step2").style.display = "block";
-    };
+    });
 
-    document.getElementById("yesBtn").onclick = function () {
+    yesBtn.addEventListener("click", function () {
       document.getElementById("step2").style.display = "none";
       document.getElementById("step3").style.display = "block";
-    };
+    });
 
-    document.getElementById("noBtn").onclick = function () {
-      alert("Seri parava illa 😅, one more time yosikkalam 💕");
-    };
+    noBtn.addEventListener("click", function () {
+      alert("Seri parava illa 😅… konjam yosichitu Yes click pannu 💕");
+    });
   </script>
 
 </body>
