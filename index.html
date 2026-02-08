@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaadhal Pannalama 💖</title>
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg,#ff5f6d,#ffc371);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    .card{
+      background:#ffffffee;
+      padding:30px 24px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+      max-width:420px;
+      width:90%;
+    }
+    h1{margin:0 0 12px}
+    p{margin:0 0 20px}
+    button{
+      padding:10px 18px;
+      border:none;
+      border-radius:999px;
+      font-size:16px;
+      cursor:pointer;
+      margin:0 6px;
+    }
+    .yes{background:#22c55e;color:#fff}
+    .no{background:#ef4444;color:#fff}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hey ❤️</h1>
+    <p>Unkitta oru important question kekkava?</p>
+    <button onclick="next()">Next ➜</button>
+  </div>
+
+  <script>
+    function next(){
+      document.querySelector('.card').innerHTML = `
+        <h1>Will you marry me? 💍🥺</h1>
+        <p>En life-la nee irundhaa podhum ❤️</p>
+        <button class="yes" onclick="yes()">Yes</button>
+        <button class="no" onclick="no()">No</button>
+      `;
+    }
+    function yes(){
+      document.querySelector('.card').innerHTML = `
+        <h1>Yesss 😍💖</h1>
+        <p>En life full happiness dhaan ippo!</p>
+      `;
+    }
+    function no(){
+      document.querySelector('.card').innerHTML = `
+        <h1>It's okay 🙂</h1>
+        <p>Un happiness dhaan mukkiyam 💙</p>
+      `;
+    }
+  </script>
+</body>
+</html>
