@@ -1,70 +1,96 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kaadhal Pannalama 💖</title>
+  <meta charset="UTF-8">
+  <title>For You 💖</title>
   <style>
-    body{
-      margin:0;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg,#ff5f6d,#ffc371);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #2c2c2c;
+      text-align: center;
+      padding: 20px;
     }
-    .card{
-      background:#ffffffee;
-      padding:30px 24px;
-      border-radius:16px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,.2);
-      max-width:420px;
-      width:90%;
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255,77,109,0.6);
     }
-    h1{margin:0 0 12px}
-    p{margin:0 0 20px}
-    button{
-      padding:10px 18px;
-      border:none;
-      border-radius:999px;
-      font-size:16px;
-      cursor:pointer;
-      margin:0 6px;
+    button:hover {
+      transform: scale(1.05);
     }
-    .yes{background:#22c55e;color:#fff}
-    .no{background:#ef4444;color:#fff}
+    .box {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hey ❤️</h1>
-    <p>Unkitta oru important question kekkava?</p>
-    <button onclick="next()">Next ➜</button>
+
+  <div class="box" id="step1">
+    <h2>Oru chinna message unakku 💌</h2>
+    <button id="nextBtn">Next 💖</button>
+  </div>
+
+  <div class="box" id="step2" style="display:none;">
+    <p>
+      From the first time you came into my life, everything started feeling brighter and more meaningful butuu. 
+      Your smile, your care, makes my world complete in ways I never imagined. 
+      With you, even ordinary days feel special thangooo, and I can’t picture my future without you by my side. 
+      I don’t just want to love you today, I want to choose you every single day for the rest of my life. 
+      So from the bottom of my heart, with all my love and hope for our beautiful life to begin buttu 💖
+    </p>
+
+    <h2>Will you marry me? 💍</h2>
+    <button id="yesBtn">Yes 😍</button>
+    <button id="noBtn">No 😅</button>
+  </div>
+
+  <div class="box" id="step3" style="display:none;">
+    <p>
+      Ippo naan un love ah full heart oda accept panren, buttu. <br>
+      En life la nee vandha naal lendhu ellame bright ah feel aaguthu. <br>
+      Un feelings enakku romba precious, thangoo, adha naan romba care pannuven. <br>
+      Nee irundha podhum, small moments kooda special ah maariduthu. <br>
+      Un kooda irukkumbodhu naan romba safe ah feel panren, chelooo. <br>
+      En heart la nee irukka place romba special, ammu. <br>
+      Daily unna ninaikkum bodhu, automatic ah smile varudhu. <br>
+      Un voice kettaale podhum, mind full calm aagiduthu, muu. <br>
+      Namma rendu perum serndhu future build panna naan ready, buttu. <br>
+      Un kooda grow aaganum, learn aaganum, dream panna naan aasai padren. <br>
+      En happiness la nee periya part, thangoo, adha naan marakka maatten. <br>
+      Life la enna problem vandhaalum, un kai pidichu face pannuven. <br>
+      Nee en life oda sweetest blessing, chelooo. <br>
+      Un smile dhaan enakku daily motivation, ammu. <br>
+      Un heart ah protect panna naan always try pannuven, muu. <br>
+      Indha moment lendhu, en heart full ah unakku mattum dhaan, forever buttu. 💖
+    </p>
   </div>
 
   <script>
-    function next(){
-      document.querySelector('.card').innerHTML = `
-        <h1>Will you marry me? 💍🥺</h1>
-        <p>En life-la nee irundhaa podhum ❤️</p>
-        <button class="yes" onclick="yes()">Yes</button>
-        <button class="no" onclick="no()">No</button>
-      `;
-    }
-    function yes(){
-      document.querySelector('.card').innerHTML = `
-        <h1>Yesss 😍💖</h1>
-        <p>En life full happiness dhaan ippo!</p>
-      `;
-    }
-    function no(){
-      document.querySelector('.card').innerHTML = `
-        <h1>It's okay 🙂</h1>
-        <p>Un happiness dhaan mukkiyam 💙</p>
-      `;
-    }
+    document.getElementById("nextBtn").onclick = function () {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+    };
+
+    document.getElementById("yesBtn").onclick = function () {
+      document.getElementById("step2").style.display = "none";
+      document.getElementById("step3").style.display = "block";
+    };
+
+    document.getElementById("noBtn").onclick = function () {
+      alert("Seri parava illa 😅, one more time yosikkalam 💕");
+    };
   </script>
+
 </body>
 </html>
